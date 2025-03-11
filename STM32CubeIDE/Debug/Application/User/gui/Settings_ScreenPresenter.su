@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/settings_screen_screen/Settings_ScreenPresenter.hpp:28:13:Settings_ScreenPresenter::~Settings_ScreenPresenter()	0	static
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/gui/src/settings_screen_screen/Settings_ScreenPresenter.cpp:10:6:virtual void Settings_ScreenPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/settings_screen_screen/Settings_ScreenPresenter.hpp:28:13:virtual Settings_ScreenPresenter::~Settings_ScreenPresenter()	8	static
+../../TouchGFX/gui/include/gui/settings_screen_screen/Settings_ScreenPresenter.hpp:28:13:virtual void* Settings_ScreenPresenter::_ZThn4_N24Settings_ScreenPresenterD1Ev()	0	static
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/gui/src/settings_screen_screen/Settings_ScreenPresenter.cpp:4:1:Settings_ScreenPresenter::Settings_ScreenPresenter(Settings_ScreenView&)	0	static

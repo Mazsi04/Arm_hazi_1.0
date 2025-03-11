@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/about_screen_screen/About_ScreenPresenter.hpp:28:13:About_ScreenPresenter::~About_ScreenPresenter()	0	static
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/gui/src/about_screen_screen/About_ScreenPresenter.cpp:10:6:virtual void About_ScreenPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/about_screen_screen/About_ScreenPresenter.hpp:28:13:virtual About_ScreenPresenter::~About_ScreenPresenter()	8	static
+../../TouchGFX/gui/include/gui/about_screen_screen/About_ScreenPresenter.hpp:28:13:virtual void* About_ScreenPresenter::_ZThn4_N21About_ScreenPresenterD1Ev()	0	static
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/gui/src/about_screen_screen/About_ScreenPresenter.cpp:4:1:About_ScreenPresenter::About_ScreenPresenter(About_ScreenView&)	0	static

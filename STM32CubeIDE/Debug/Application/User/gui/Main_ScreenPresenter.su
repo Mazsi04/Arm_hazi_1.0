@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/main_screen_screen/Main_ScreenPresenter.hpp:28:13:Main_ScreenPresenter::~Main_ScreenPresenter()	0	static
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/gui/src/main_screen_screen/Main_ScreenPresenter.cpp:10:6:virtual void Main_ScreenPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/main_screen_screen/Main_ScreenPresenter.hpp:28:13:virtual Main_ScreenPresenter::~Main_ScreenPresenter()	8	static
+../../TouchGFX/gui/include/gui/main_screen_screen/Main_ScreenPresenter.hpp:28:13:virtual void* Main_ScreenPresenter::_ZThn4_N20Main_ScreenPresenterD1Ev()	0	static
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/gui/src/main_screen_screen/Main_ScreenPresenter.cpp:4:1:Main_ScreenPresenter::Main_ScreenPresenter(Main_ScreenView&)	0	static
