@@ -9,43 +9,131 @@
             "Name": "image1",
             "Width": 320,
             "Height": 240,
-            "RelativeFilename": "Activaihome_320x240.png"
+            "RelativeFilename": "Hater.png"
           },
           {
             "Type": "Button",
-            "Name": "Start_button",
-            "X": 90,
-            "Y": 187,
-            "Width": 140,
+            "Name": "Select_device",
+            "X": 105,
+            "Y": 110,
+            "Width": 110,
+            "Height": 110,
+            "Pressed": "Device.png",
+            "Released": "Device.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "Wifi",
+            "X": 228,
+            "Y": 16,
+            "Width": 80,
+            "Height": 35,
+            "Pressed": "Wifi.png",
+            "Released": "Wifi.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "BLE",
+            "X": 228,
+            "Y": 61,
+            "Width": 80,
+            "Height": 35,
+            "Pressed": "Blutooth.png",
+            "Released": "Blutooth.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "button10",
+            "X": 228,
+            "Y": 110,
+            "Width": 80,
+            "Height": 65,
+            "Pressed": "Room_select.png",
+            "Released": "Room_select.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Temperature",
+            "X": 11,
+            "Y": 16,
+            "Width": 80,
+            "Height": 80,
+            "RelativeFilename": "Homerseklet.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 105,
+            "Y": 16,
+            "Width": 110,
+            "Height": 80,
+            "RelativeFilename": "Ido.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image3",
+            "X": 11,
+            "Y": 110,
+            "Width": 80,
             "Height": 40,
-            "Pressed": "Start_button_off.png",
-            "Released": "Start_button_on.png"
+            "RelativeFilename": "Paratartalom.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "Settings",
+            "X": 228,
+            "Y": 185,
+            "Width": 34,
+            "Height": 35,
+            "Pressed": "Settings.png",
+            "Released": "Settings.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "About",
+            "X": 274,
+            "Y": 185,
+            "Width": 34,
+            "Height": 35,
+            "Pressed": "About.png",
+            "Released": "About.png"
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock1",
+            "X": 105,
+            "Y": 34,
+            "Width": 110,
+            "Height": 45,
+            "TextId": "__SingleUse_7JQQ",
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 10,
+            "InitialMinute": 10
           }
         ],
         "Interactions": [
           {
             "InteractionName": "Interaction1",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "Start_button"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "South",
-              "ActionComponent": "Main_Screen"
-            }
-          },
-          {
-            "InteractionName": "Interaction2",
-            "Trigger": {
               "Type": "TriggerPhysicalButtonClicked"
             },
             "Action": {
               "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Main_Screen"
+            }
+          },
+          {
+            "InteractionName": "settings_clic",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Settings"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "South",
-              "ActionComponent": "Main_Screen"
+              "ActionComponent": "Settings_Screen"
             }
           }
         ]

@@ -17,22 +17,22 @@
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\OSWrappers.cpp"/>
     <ClCompile Include="$(ApplicationRoot)\simulator\main.cpp"/>
     <ClCompile Include="$(ApplicationRoot)\generated\simulator\src\mainBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
-    <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
-    <ClCompile Include="..\..\gui\src\home_screen_screen\Home_ScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\home_screen_screen\Home_ScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\home_screen_screen\Home_ScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\about_screen_screen\About_ScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\about_screen_screen\About_ScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\about_screen_screen\About_ScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\home_screen_screen\Home_ScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\home_screen_screen\Home_ScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\home_screen_screen\Home_ScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\main_screen_screen\Main_ScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\main_screen_screen\Main_ScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\main_screen_screen\Main_ScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
     <ClCompile Include="..\..\gui\src\settings_screen_screen\Settings_ScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\settings_screen_screen\Settings_ScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\settings_screen_screen\Settings_ScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -173,28 +173,28 @@
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\TouchArea.hpp"/>
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Widget.hpp"/>
     <ClInclude Include="$(ApplicationRoot)\generated\simulator\include\simulator\mainBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\about_screen_screen\About_ScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\about_screen_screen\About_ScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\about_screen_screen\About_ScreenViewBase.hpp"/>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\DirectFrameBufferVideoController.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp"/>
-    <ClInclude Include="..\..\generated\simulator\include\simulator\video\MJPEGDecoder.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\model\Model.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
-    <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\home_screen_screen\Home_ScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\home_screen_screen\Home_ScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\home_screen_screen\Home_ScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\about_screen_screen\About_ScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\about_screen_screen\About_ScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\about_screen_screen\About_ScreenViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\main_screen_screen\Main_ScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\main_screen_screen\Main_ScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\main_screen_screen\Main_ScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\MJPEGDecoder.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\model\Model.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\settings_screen_screen\Settings_ScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\settings_screen_screen\Settings_ScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settings_screen_screen\Settings_ScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

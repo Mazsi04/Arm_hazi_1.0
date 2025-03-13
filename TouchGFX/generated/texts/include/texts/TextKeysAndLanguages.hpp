@@ -12,6 +12,7 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T___SINGLEUSE_7JQQ,
     T___SINGLEUSE_MBBH,
     NUMBER_OF_TEXT_KEYS
 };

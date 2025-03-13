@@ -4,6 +4,7 @@
 #include <gui_generated/home_screen_screen/Home_ScreenViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 Home_ScreenViewBase::Home_ScreenViewBase() :
     buttonCallback(this, &Home_ScreenViewBase::buttonCallbackHandler)
@@ -13,13 +14,53 @@ Home_ScreenViewBase::Home_ScreenViewBase() :
     add(__background);
 
     image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_ACTIVAIHOME_320X240_ID));
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_HATER_ID));
     add(image1);
 
-    Start_button.setXY(90, 187);
-    Start_button.setBitmaps(touchgfx::Bitmap(BITMAP_START_BUTTON_ON_ID), touchgfx::Bitmap(BITMAP_START_BUTTON_OFF_ID));
-    Start_button.setAction(buttonCallback);
-    add(Start_button);
+    Select_device.setXY(105, 110);
+    Select_device.setBitmaps(touchgfx::Bitmap(BITMAP_DEVICE_ID), touchgfx::Bitmap(BITMAP_DEVICE_ID));
+    add(Select_device);
+
+    Wifi.setXY(228, 16);
+    Wifi.setBitmaps(touchgfx::Bitmap(BITMAP_WIFI_ID), touchgfx::Bitmap(BITMAP_WIFI_ID));
+    add(Wifi);
+
+    BLE.setXY(228, 61);
+    BLE.setBitmaps(touchgfx::Bitmap(BITMAP_BLUTOOTH_ID), touchgfx::Bitmap(BITMAP_BLUTOOTH_ID));
+    add(BLE);
+
+    button10.setXY(228, 110);
+    button10.setBitmaps(touchgfx::Bitmap(BITMAP_ROOM_SELECT_ID), touchgfx::Bitmap(BITMAP_ROOM_SELECT_ID));
+    add(button10);
+
+    Temperature.setXY(11, 16);
+    Temperature.setBitmap(touchgfx::Bitmap(BITMAP_HOMERSEKLET_ID));
+    add(Temperature);
+
+    image2.setXY(105, 16);
+    image2.setBitmap(touchgfx::Bitmap(BITMAP_IDO_ID));
+    add(image2);
+
+    image3.setXY(11, 110);
+    image3.setBitmap(touchgfx::Bitmap(BITMAP_PARATARTALOM_ID));
+    add(image3);
+
+    Settings.setXY(228, 185);
+    Settings.setBitmaps(touchgfx::Bitmap(BITMAP_SETTINGS_ID), touchgfx::Bitmap(BITMAP_SETTINGS_ID));
+    Settings.setAction(buttonCallback);
+    add(Settings);
+
+    About.setXY(274, 185);
+    About.setBitmaps(touchgfx::Bitmap(BITMAP_ABOUT_ID), touchgfx::Bitmap(BITMAP_ABOUT_ID));
+    add(About);
+
+    digitalClock1.setPosition(105, 34, 110, 45);
+    digitalClock1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    digitalClock1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7JQQ));
+    digitalClock1.displayLeadingZeroForHourIndicator(true);
+    digitalClock1.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR_NO_SECONDS);
+    digitalClock1.setTime24Hour(10, 10, 0);
+    add(digitalClock1);
 }
 
 Home_ScreenViewBase::~Home_ScreenViewBase()
@@ -34,12 +75,12 @@ void Home_ScreenViewBase::setupScreen()
 
 void Home_ScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &Start_button)
+    if (&src == &Settings)
     {
-        //Interaction1
-        //When Start_button clicked change screen to Main_Screen
-        //Go to Main_Screen with screen transition towards South
-        application().gotoMain_ScreenScreenSlideTransitionSouth();
+        //settings_clic
+        //When Settings clicked change screen to Settings_Screen
+        //Go to Settings_Screen with screen transition towards South
+        application().gotoSettings_ScreenScreenSlideTransitionSouth();
     }
 }
 
@@ -47,10 +88,10 @@ void Home_ScreenViewBase::handleKeyEvent(uint8_t key)
 {
     if(0 == key)
     {
-        //Interaction2
+        //Interaction1
         //When hardware button 0 clicked change screen to Main_Screen
-        //Go to Main_Screen with screen transition towards South
-        application().gotoMain_ScreenScreenSlideTransitionSouth();
+        //Go to Main_Screen with no screen transition
+        application().gotoMain_ScreenScreenNoTransition();
     
     }
 }

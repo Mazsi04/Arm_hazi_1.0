@@ -49,7 +49,13 @@ Application/User/gui/Home_ScreenView.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/DigitalClock.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/AbstractClock.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
 ../../TouchGFX/gui/include/gui/home_screen_screen/Home_ScreenView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/home_screen_screen/Home_ScreenViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -100,3 +106,9 @@ Application/User/gui/Home_ScreenView.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/DigitalClock.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/AbstractClock.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:

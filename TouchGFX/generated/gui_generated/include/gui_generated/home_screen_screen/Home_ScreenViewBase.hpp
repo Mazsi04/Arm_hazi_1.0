@@ -10,6 +10,7 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/containers/clock/DigitalClock.hpp>
 
 class Home_ScreenViewBase : public touchgfx::View<Home_ScreenPresenter>
 {
@@ -29,7 +30,16 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image image1;
-    touchgfx::Button Start_button;
+    touchgfx::Button Select_device;
+    touchgfx::Button Wifi;
+    touchgfx::Button BLE;
+    touchgfx::Button button10;
+    touchgfx::Image Temperature;
+    touchgfx::Image image2;
+    touchgfx::Image image3;
+    touchgfx::Button Settings;
+    touchgfx::Button About;
+    touchgfx::DigitalClock digitalClock1;
 
 private:
 

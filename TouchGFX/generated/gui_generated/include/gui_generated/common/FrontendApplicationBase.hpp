@@ -26,7 +26,7 @@ public:
     void gotoHome_ScreenScreenSlideTransitionWest();
 
     // Main_Screen
-    void gotoMain_ScreenScreenSlideTransitionSouth();
+    void gotoMain_ScreenScreenNoTransition();
 
     void gotoMain_ScreenScreenSlideTransitionWest();
 
@@ -34,6 +34,8 @@ public:
     void gotoAbout_ScreenScreenWipeTransitionEast();
 
     // Settings_Screen
+    void gotoSettings_ScreenScreenSlideTransitionSouth();
+
     void gotoSettings_ScreenScreenWipeTransitionEast();
 
 protected:
@@ -47,7 +49,7 @@ protected:
     void gotoHome_ScreenScreenSlideTransitionWestImpl();
 
     // Main_Screen
-    void gotoMain_ScreenScreenSlideTransitionSouthImpl();
+    void gotoMain_ScreenScreenNoTransitionImpl();
 
     void gotoMain_ScreenScreenSlideTransitionWestImpl();
 
@@ -55,6 +57,8 @@ protected:
     void gotoAbout_ScreenScreenWipeTransitionEastImpl();
 
     // Settings_Screen
+    void gotoSettings_ScreenScreenSlideTransitionSouthImpl();
+
     void gotoSettings_ScreenScreenWipeTransitionEastImpl();
 };
 

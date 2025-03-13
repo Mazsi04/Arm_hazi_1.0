@@ -58,6 +58,12 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/DigitalClock.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/AbstractClock.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  gui/include/gui/main_screen_screen/Main_ScreenView.hpp \
  generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp \
  gui/include/gui/main_screen_screen/Main_ScreenPresenter.hpp \
@@ -68,9 +74,6 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/QRCode.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/utils/qrcodegen.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
  gui/include/gui/settings_screen_screen/Settings_ScreenView.hpp \
  generated/gui_generated/include/gui_generated/settings_screen_screen/Settings_ScreenViewBase.hpp \
  gui/include/gui/settings_screen_screen/Settings_ScreenPresenter.hpp \
@@ -196,6 +199,18 @@ gui/include/gui/model/ModelListener.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 
+../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/DigitalClock.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/AbstractClock.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
+
 gui/include/gui/main_screen_screen/Main_ScreenView.hpp:
 
 generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp:
@@ -215,12 +230,6 @@ gui/include/gui/about_screen_screen/About_ScreenPresenter.hpp:
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/utils/qrcodegen.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
 
 gui/include/gui/settings_screen_screen/Settings_ScreenView.hpp:
 
