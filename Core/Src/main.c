@@ -132,12 +132,15 @@ int _write(int file, char *ptr, int len)
 __IO uint8_t User_ButtonState = 0;
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	//OK
 	if(GPIO_Pin == GPIO_PIN_0){
 		User_ButtonState = 0x01;
 	}
+	//Right
 	if(GPIO_Pin == GPIO_PIN_1){
 		User_ButtonState = 0x02;
 	}
+	//Left
 	if(GPIO_Pin == GPIO_PIN_2){
 		User_ButtonState = 0x03;
 	}

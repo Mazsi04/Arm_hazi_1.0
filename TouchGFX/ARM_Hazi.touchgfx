@@ -135,6 +135,51 @@
               "ScreenTransitionDirection": "South",
               "ActionComponent": "Settings_Screen"
             }
+          },
+          {
+            "InteractionName": "Button_OK",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 48
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "WidgetScrolling"
+            }
+          },
+          {
+            "InteractionName": "about",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "About"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "About_Screen"
+            }
+          },
+          {
+            "InteractionName": "Button_Right",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 49
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "WidgetScrolling"
+            }
+          },
+          {
+            "InteractionName": "Button_Left",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 50
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "WidgetScrolling"
+            }
           }
         ]
       },

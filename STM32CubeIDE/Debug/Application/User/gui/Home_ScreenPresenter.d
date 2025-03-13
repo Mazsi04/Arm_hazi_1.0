@@ -46,6 +46,7 @@ Application/User/gui/Home_ScreenPresenter.o: \
  ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp \
  ../../TouchGFX/gui/include/gui/home_screen_screen/Home_ScreenPresenter.hpp \
  ../../TouchGFX/gui/include/gui/model/ModelListener.hpp \
+ ../../TouchGFX/gui/include/gui/home_screen_screen/WidgetSelection.h \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
@@ -102,6 +103,7 @@ Application/User/gui/Home_ScreenPresenter.o: \
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:
 ../../TouchGFX/gui/include/gui/home_screen_screen/Home_ScreenPresenter.hpp:
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:
+../../TouchGFX/gui/include/gui/home_screen_screen/WidgetSelection.h:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:

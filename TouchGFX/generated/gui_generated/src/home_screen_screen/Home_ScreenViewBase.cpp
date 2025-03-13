@@ -52,6 +52,7 @@ Home_ScreenViewBase::Home_ScreenViewBase() :
 
     About.setXY(274, 185);
     About.setBitmaps(touchgfx::Bitmap(BITMAP_ABOUT_ID), touchgfx::Bitmap(BITMAP_ABOUT_ID));
+    About.setAction(buttonCallback);
     add(About);
 
     digitalClock1.setPosition(105, 34, 110, 45);
@@ -82,6 +83,13 @@ void Home_ScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
         //Go to Settings_Screen with screen transition towards South
         application().gotoSettings_ScreenScreenSlideTransitionSouth();
     }
+    if (&src == &About)
+    {
+        //about
+        //When About clicked change screen to About_Screen
+        //Go to About_Screen with no screen transition
+        application().gotoAbout_ScreenScreenNoTransition();
+    }
 }
 
 void Home_ScreenViewBase::handleKeyEvent(uint8_t key)
@@ -92,6 +100,33 @@ void Home_ScreenViewBase::handleKeyEvent(uint8_t key)
         //When hardware button 0 clicked change screen to Main_Screen
         //Go to Main_Screen with no screen transition
         application().gotoMain_ScreenScreenNoTransition();
+    
+    }
+
+    if(48 == key)
+    {
+        //Button_OK
+        //When hardware button 48 clicked call virtual function
+        //Call WidgetScrolling
+        WidgetScrolling();
+    
+    }
+
+    if(49 == key)
+    {
+        //Button_Right
+        //When hardware button 49 clicked call virtual function
+        //Call WidgetScrolling
+        WidgetScrolling();
+    
+    }
+
+    if(50 == key)
+    {
+        //Button_Left
+        //When hardware button 50 clicked call virtual function
+        //Call WidgetScrolling
+        WidgetScrolling();
     
     }
 }

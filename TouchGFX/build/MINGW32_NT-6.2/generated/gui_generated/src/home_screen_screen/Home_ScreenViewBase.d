@@ -45,6 +45,7 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/home_screen_screen/Home_ScreenV
  ../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp \
  gui/include/gui/home_screen_screen/Home_ScreenPresenter.hpp \
  gui/include/gui/model/ModelListener.hpp \
+ gui/include/gui/home_screen_screen/WidgetSelection.h \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
@@ -148,6 +149,8 @@ gui/include/gui/model/Model.hpp:
 gui/include/gui/home_screen_screen/Home_ScreenPresenter.hpp:
 
 gui/include/gui/model/ModelListener.hpp:
+
+gui/include/gui/home_screen_screen/WidgetSelection.h:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
 

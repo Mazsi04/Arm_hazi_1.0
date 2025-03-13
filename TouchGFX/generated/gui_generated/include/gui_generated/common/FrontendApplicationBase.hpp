@@ -31,6 +31,8 @@ public:
     void gotoMain_ScreenScreenSlideTransitionWest();
 
     // About_Screen
+    void gotoAbout_ScreenScreenNoTransition();
+
     void gotoAbout_ScreenScreenWipeTransitionEast();
 
     // Settings_Screen
@@ -54,6 +56,8 @@ protected:
     void gotoMain_ScreenScreenSlideTransitionWestImpl();
 
     // About_Screen
+    void gotoAbout_ScreenScreenNoTransitionImpl();
+
     void gotoAbout_ScreenScreenWipeTransitionEastImpl();
 
     // Settings_Screen

@@ -3,6 +3,8 @@
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+#include "WidgetSelection.h"
+
 
 using namespace touchgfx;
 
@@ -27,10 +29,23 @@ public:
 
     virtual ~Home_ScreenPresenter() {}
 
+    void gotoNextScreen(/*WidgetEnums::*/WidgetSelection selectedWidget);
+
+    //application függvény
+    FrontendApplication& application() {
+            return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
+        }
+
 private:
     Home_ScreenPresenter();
 
     Home_ScreenView& view;
 };
+
+
+
+
+
+
 
 #endif // HOME_SCREENPRESENTER_HPP

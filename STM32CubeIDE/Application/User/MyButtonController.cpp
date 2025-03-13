@@ -26,19 +26,19 @@ bool MyButtonController::sample(uint8_t& key)
     {
 
     		User_ButtonState = 0x00;
-	        key = 0;
+	        key = 48;
 	        return true;
     }
 	if(User_ButtonState == 0x02){
 
 		User_ButtonState = 0x00;
-        key = 1;
+        key = 49;
         return true;
 	}
 	if(User_ButtonState == 0x03){
 
 		User_ButtonState = 0x00;
-        key = 2;
+        key = 50;
         return true;
 	}
 

@@ -87,6 +87,17 @@ void FrontendApplicationBase::gotoMain_ScreenScreenSlideTransitionWestImpl()
 
 // About_Screen
 
+void FrontendApplicationBase::gotoAbout_ScreenScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoAbout_ScreenScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoAbout_ScreenScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<About_ScreenView, About_ScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
 void FrontendApplicationBase::gotoAbout_ScreenScreenWipeTransitionEast()
 {
     transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoAbout_ScreenScreenWipeTransitionEastImpl);

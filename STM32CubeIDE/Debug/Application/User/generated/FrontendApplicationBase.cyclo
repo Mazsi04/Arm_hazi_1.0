@@ -33,21 +33,24 @@
 ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:59:18:virtual void touchgfx::MVPApplication::handlePendingScreenTransition()	3
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:87:18:void touchgfx::SlideTransition<templateDirection>::handleTickEvent() [with touchgfx::Direction templateDirection = touchgfx::SOUTH]	4
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:87:18:void touchgfx::SlideTransition<templateDirection>::handleTickEvent() [with touchgfx::Direction templateDirection = touchgfx::WEST]	4
-C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:120:6:void FrontendApplicationBase::gotoSettings_ScreenScreenWipeTransitionEastImpl()	7
-C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:96:6:void FrontendApplicationBase::gotoAbout_ScreenScreenWipeTransitionEastImpl()	7
-C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:72:6:void FrontendApplicationBase::gotoMain_ScreenScreenNoTransitionImpl()	7
-C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:48:6:void FrontendApplicationBase::gotoHome_ScreenScreenNoTransitionImpl()	7
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:131:6:void FrontendApplicationBase::gotoSettings_ScreenScreenWipeTransitionEastImpl()	7
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:107:6:void FrontendApplicationBase::gotoAbout_ScreenScreenWipeTransitionEastImpl()	7
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	1
-C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:109:6:void FrontendApplicationBase::gotoSettings_ScreenScreenSlideTransitionSouthImpl()	8
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:120:6:void FrontendApplicationBase::gotoSettings_ScreenScreenSlideTransitionSouthImpl()	8
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:308:17:static touchgfx::LCD& touchgfx::HAL::lcd()	3
 C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:23:1:FrontendApplicationBase::FrontendApplicationBase(Model&, FrontendHeap&)	1
 C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:42:6:void FrontendApplicationBase::gotoHome_ScreenScreenNoTransition()	1
 C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:53:6:void FrontendApplicationBase::gotoHome_ScreenScreenSlideTransitionWest()	1
 C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:66:6:void FrontendApplicationBase::gotoMain_ScreenScreenNoTransition()	1
 C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:77:6:void FrontendApplicationBase::gotoMain_ScreenScreenSlideTransitionWest()	1
-C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:90:6:void FrontendApplicationBase::gotoAbout_ScreenScreenWipeTransitionEast()	1
-C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:103:6:void FrontendApplicationBase::gotoSettings_ScreenScreenSlideTransitionSouth()	1
-C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:114:6:void FrontendApplicationBase::gotoSettings_ScreenScreenWipeTransitionEast()	1
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:90:6:void FrontendApplicationBase::gotoAbout_ScreenScreenNoTransition()	1
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:101:6:void FrontendApplicationBase::gotoAbout_ScreenScreenWipeTransitionEast()	1
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:114:6:void FrontendApplicationBase::gotoSettings_ScreenScreenSlideTransitionSouth()	1
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:125:6:void FrontendApplicationBase::gotoSettings_ScreenScreenWipeTransitionEast()	1
+../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp:135:8:T& touchgfx::AbstractPartition::at(uint16_t) [with T = touchgfx::NoTransition]	1
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:96:6:void FrontendApplicationBase::gotoAbout_ScreenScreenNoTransitionImpl()	7
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:72:6:void FrontendApplicationBase::gotoMain_ScreenScreenNoTransitionImpl()	7
+C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:48:6:void FrontendApplicationBase::gotoHome_ScreenScreenNoTransitionImpl()	7
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:47:5:touchgfx::SlideTransition<templateDirection>::SlideTransition(uint8_t) [with touchgfx::Direction templateDirection = touchgfx::WEST]	2
 C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:83:6:void FrontendApplicationBase::gotoMain_ScreenScreenSlideTransitionWestImpl()	7
 C:/TouchGFXProjects/ARM_Hazi/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:59:6:void FrontendApplicationBase::gotoHome_ScreenScreenSlideTransitionWestImpl()	7
