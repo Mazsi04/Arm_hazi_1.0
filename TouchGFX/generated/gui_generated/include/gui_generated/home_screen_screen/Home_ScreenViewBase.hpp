@@ -11,6 +11,8 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class Home_ScreenViewBase : public touchgfx::View<Home_ScreenPresenter>
 {
@@ -38,16 +40,27 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image image1;
-    touchgfx::Button Select_device;
-    touchgfx::Button Wifi;
+    touchgfx::Button SELECT_DEVICE;
+    touchgfx::Button WIFI;
     touchgfx::Button BLE;
-    touchgfx::Button button10;
+    touchgfx::Button ROOM_SELECT;
     touchgfx::Image Temperature;
     touchgfx::Image image2;
     touchgfx::Image image3;
-    touchgfx::Button Settings;
-    touchgfx::Button About;
+    touchgfx::Button SETTINGS;
+    touchgfx::Button ABOUT;
     touchgfx::DigitalClock digitalClock1;
+    touchgfx::TextAreaWithOneWildcard data_temp;
+    touchgfx::TextArea textArea2;
+    touchgfx::TextArea textArea3;
+    touchgfx::TextArea textArea4;
+    touchgfx::Image image4;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t DATA_TEMP_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar data_tempBuffer[DATA_TEMP_SIZE];
 
 private:
 

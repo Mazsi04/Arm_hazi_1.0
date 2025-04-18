@@ -6,6 +6,21 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="TempData" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">--°C</Translation>
+      </Text>
+      <Text Id="__SingleUse_QLGR" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">47%</Translation>
+      </Text>
+      <Text Id="__SingleUse_9QXP" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Humidity</Translation>
+      </Text>
+      <Text Id="__SingleUse_L27J" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Temperature</Translation>
+      </Text>
+      <Text Id="__SingleUse_J8SO" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_7JQQ" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
@@ -15,8 +30,8 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="LEELAWDB.TTF" Size="13" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="LEELAWDB.TTF" Size="35" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
-    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="LEELAWDB.TTF" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

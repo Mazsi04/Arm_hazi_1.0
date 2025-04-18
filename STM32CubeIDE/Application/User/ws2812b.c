@@ -35,7 +35,7 @@ void WS2812B_Update(void) {
     HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)ledData, LED_DATA_SIZE);
 
     // DMA újraindítása
-    HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)ledData, LED_DATA_SIZE);
+    //HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)ledData, LED_DATA_SIZE);
 }
 
 void SetAllLEDs(uint8_t red, uint8_t green, uint8_t blue) {

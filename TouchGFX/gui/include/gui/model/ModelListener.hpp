@@ -14,6 +14,8 @@ public:
     {
         model = m;
     }
+
+    //virtual void onValueUpdated(int value) {}
 protected:
     Model* model;
 };

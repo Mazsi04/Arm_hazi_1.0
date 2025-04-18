@@ -13,7 +13,7 @@
           },
           {
             "Type": "Button",
-            "Name": "Select_device",
+            "Name": "SELECT_DEVICE",
             "X": 105,
             "Y": 110,
             "Width": 110,
@@ -23,7 +23,7 @@
           },
           {
             "Type": "Button",
-            "Name": "Wifi",
+            "Name": "WIFI",
             "X": 228,
             "Y": 16,
             "Width": 80,
@@ -43,7 +43,7 @@
           },
           {
             "Type": "Button",
-            "Name": "button10",
+            "Name": "ROOM_SELECT",
             "X": 228,
             "Y": 110,
             "Width": 80,
@@ -80,7 +80,7 @@
           },
           {
             "Type": "Button",
-            "Name": "Settings",
+            "Name": "SETTINGS",
             "X": 228,
             "Y": 185,
             "Width": 34,
@@ -90,7 +90,7 @@
           },
           {
             "Type": "Button",
-            "Name": "About",
+            "Name": "ABOUT",
             "X": 274,
             "Y": 185,
             "Width": 34,
@@ -109,6 +109,65 @@
             "DisplayLeadingZeroForHourIndicator": true,
             "InitialHour": 10,
             "InitialMinute": 10
+          },
+          {
+            "Type": "TextArea",
+            "Name": "data_temp",
+            "X": 14,
+            "Y": 44,
+            "Width": 63,
+            "Height": 35,
+            "TextId": "__SingleUse_J8SO",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "TempData",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "WideTextAction": 3
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 12,
+            "Y": 25,
+            "Width": 78,
+            "Height": 16,
+            "TextId": "__SingleUse_L27J",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 22,
+            "Y": 110,
+            "Width": 58,
+            "Height": 16,
+            "TextId": "__SingleUse_9QXP",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 31,
+            "Y": 126,
+            "Width": 41,
+            "Height": 20,
+            "TextId": "__SingleUse_QLGR",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "image4",
+            "X": 12,
+            "Y": 160,
+            "Width": 80,
+            "Height": 60,
+            "RelativeFilename": "Activaihome_logo_screen.png"
           }
         ],
         "Interactions": [
@@ -127,7 +186,7 @@
             "InteractionName": "settings_clic",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "Settings"
+              "TriggerComponent": "SETTINGS"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -151,7 +210,7 @@
             "InteractionName": "about",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "About"
+              "TriggerComponent": "ABOUT"
             },
             "Action": {
               "Type": "ActionGotoScreen",

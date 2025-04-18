@@ -1,4 +1,5 @@
 #include <gui/home_screen_screen/Home_ScreenView.hpp>
+#include <stdio.h> // sprintf használatához
 
 Home_ScreenView::Home_ScreenView()
 {
@@ -10,12 +11,21 @@ void Home_ScreenView::setupScreen()
 		digitalHours = digitalClock1.getCurrentHour();
 	    digitalMinutes = digitalClock1.getCurrentMinute();
 	    digitalSeconds = digitalClock1.getCurrentSecond();
+
+	    currentWidget = WIDGET_WIFI;
+	    // Frissítsük a megjelenítést
+	    updateButtonHighlight();
+
+	    //TempPresenter.updateText(100);
+	    updateText(0);
 }
 
 void Home_ScreenView::tearDownScreen()
 {
     Home_ScreenViewBase::tearDownScreen();
 }
+
+//extern "C" int globalValue;
 
 void Home_ScreenView::handleTickEvent()
 {
@@ -39,6 +49,7 @@ void Home_ScreenView::handleTickEvent()
         // Update the clock
         digitalClock1.setTime24Hour(digitalHours, digitalMinutes, digitalSeconds);
     }
+    //updateText(globalValue);
 }
 
 
@@ -74,8 +85,53 @@ void Home_ScreenView::WidgetScrolling()
     default:
         break;
     }
+    // Frissítsük a gombok vizuális állapotát
+    updateButtonHighlight();
 }
 
+void Home_ScreenView::updateButtonHighlight()
+{
+    // Az összes gombot visszaállítjuk az eredeti állapotba
+	SELECT_DEVICE.setAlpha(255);
+	ROOM_SELECT.setAlpha(255);
+    WIFI.setAlpha(255);
+    BLE.setAlpha(255);
+    SETTINGS.setAlpha(255);
+    ABOUT.setAlpha(255);
+
+    // A kiválasztott gomb halványabb lesz
+    switch (currentWidget)
+    {
+    case WIDGET_WIFI:
+    	WIFI.setAlpha(150);
+        break;
+    case WIDGET_BLE:
+        BLE.setAlpha(150);
+        break;
+    case WIDGET_ROOM_SELECT:
+    	ROOM_SELECT.setAlpha(150); // Halványítjuk
+        break;
+    case WIDGET_SELECT_DEVICE:
+    	SELECT_DEVICE.setAlpha(150); // Halványítjuk
+        break;
+    case WIDGET_SETTINGS:
+    	SETTINGS.setAlpha(150);
+        break;
+    case WIDGET_ABOUT:
+    	ABOUT.setAlpha(150);
+        break;
+    default:
+        break;
+    }
+
+    // A módosítások érvénybe léptetése
+    SELECT_DEVICE.invalidate();
+    ROOM_SELECT.invalidate();
+    WIFI.invalidate();
+    BLE.invalidate();
+    SETTINGS.invalidate();
+    ABOUT.invalidate();
+}
 
 void Home_ScreenView::handleKeyEvent(uint8_t key)
 {
@@ -98,3 +154,42 @@ void Home_ScreenView::handleKeyEvent(uint8_t key)
     // Hívjuk meg a generált implementációt, ami majd meghívja a WidgetScrolling()-et
     Home_ScreenViewBase::handleKeyEvent(key);
 }
+
+
+/*void Home_ScreenView::updateText(int newValue)
+{
+	Unicode::snprintf(myTextBuffer, sizeof(myTextBuffer) / sizeof(Unicode::UnicodeChar), "%d\u00B0C", newValue); // A számot szöveggé alakítjuk
+    data_temp.setWildcard(myTextBuffer);  // Beállítjuk a szöveget
+    data_temp.invalidate();               // Frissítjük a kijelzőt
+}*/
+
+void Home_ScreenView::updateText(int newValue)
+{
+    int len = 0;
+    // Ha negatív az érték, akkor külön formázd le a mínusz jellel
+    if(newValue < 0)
+    {
+        /*len = */Unicode::snprintf(myTextBuffer, sizeof(myTextBuffer) / sizeof(Unicode::UnicodeChar), "-%d", -newValue);
+    }
+    else
+    {
+        /*len =*/ Unicode::snprintf(myTextBuffer, sizeof(myTextBuffer) / sizeof(Unicode::UnicodeChar), "%d", newValue);
+    }
+
+    // Ellenőrizzük, hogy van-e elegendő hely a fokjelnek és a 'C'-nek
+    len = Unicode::strlen(myTextBuffer);  // Meghatározzuk a szöveg hosszát
+    if(len < (int)((sizeof(myTextBuffer)/sizeof(Unicode::UnicodeChar)) - 2))
+    {
+        myTextBuffer[len]     = 0x00BA;  // Fokjel Unicode értéke
+        myTextBuffer[len +1] = 0x0043;     // 'C' karakter
+        myTextBuffer[len + 2] = '\0';       // null-terminátor
+    }
+    else
+    {
+        myTextBuffer[(sizeof(myTextBuffer)/sizeof(Unicode::UnicodeChar)) - 1] = 0;
+    }
+
+    data_temp.setWildcard(myTextBuffer);
+    data_temp.invalidate();
+}
+

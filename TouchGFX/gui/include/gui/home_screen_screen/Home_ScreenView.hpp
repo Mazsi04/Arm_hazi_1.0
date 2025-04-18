@@ -25,17 +25,28 @@ public:
 
     virtual void WidgetScrolling();
 
+
     virtual void handleKeyEvent(uint8_t key);
 
     MyAplicationButton currentButton;
-    /*WidgetEnums::*/
+
     WidgetSelection currentWidget;
+
+    Unicode::UnicodeChar myTextBuffer[10]; // Buffer a szám tárolására
+    void updateText(int newValue);
+
+    //virtual void TempUpdate();
 
 protected:
     	int tickCounter;
         int digitalHours;
         int digitalMinutes;
         int digitalSeconds;
+
+
+        void updateButtonHighlight();
+
+
 };
 
 #endif // HOME_SCREENVIEW_HPP

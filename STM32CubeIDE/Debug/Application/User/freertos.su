@@ -1,0 +1,4 @@
+C:/TouchGFXProjects/ARM_Hazi/Core/Src/freertos.c:65:13:configureTimerForRunTimeStats	0	static
+C:/TouchGFXProjects/ARM_Hazi/Core/Src/freertos.c:70:22:getRunTimeCounterValue	0	static
+C:/TouchGFXProjects/ARM_Hazi/Core/Src/freertos.c:77:6:vApplicationIdleHook	0	static
+C:/TouchGFXProjects/ARM_Hazi/Core/Src/freertos.c:92:6:vApplicationStackOverflowHook	0	static

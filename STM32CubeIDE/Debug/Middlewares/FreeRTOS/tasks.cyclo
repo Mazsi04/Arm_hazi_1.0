@@ -1,5 +1,6 @@
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:1077:13:prvAddNewTaskToReadyList	9
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:5177:13:prvAddCurrentTaskToDelayedList	5
+C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4352:15:prvWriteNameToBuffer	1
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:1805:20:prvTaskIsTaskSuspended	4
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:3943:13:prvResetNextTaskUnblockTime	2
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:3887:14:prvDeleteTCB	4
@@ -30,7 +31,7 @@ C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:288
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:2910:21:xTaskGetApplicationTaskTag	2
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:2934:21:xTaskGetApplicationTaskTagFromISR	2
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:2959:13:xTaskCallApplicationTaskHook	3
-C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:2989:6:vTaskSwitchContext	5
+C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:2989:6:vTaskSwitchContext	10
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:1704:7:vTaskSuspend	9
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:3064:6:vTaskPlaceOnEventList	2
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:3081:6:vTaskPlaceOnUnorderedEventList	3
@@ -52,6 +53,8 @@ C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:398
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4014:13:xTaskPriorityInherit	6
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4104:13:xTaskPriorityDisinherit	7
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4184:7:vTaskPriorityDisinheritAfterTimeout	9
+C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4378:7:vTaskList	4
+C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4477:7:vTaskGetRunTimeStats	5
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4602:12:uxTaskResetEventItemValue	1
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4618:15:pvTaskIncrementMutexHeldCount	2
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4635:11:ulTaskNotifyTake	5

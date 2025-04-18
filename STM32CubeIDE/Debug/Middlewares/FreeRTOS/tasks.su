@@ -1,5 +1,6 @@
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:1077:13:prvAddNewTaskToReadyList	24	static,ignoring_inline_asm
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:5177:13:prvAddCurrentTaskToDelayedList	24	static
+C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4352:15:prvWriteNameToBuffer	16	static
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:1805:20:prvTaskIsTaskSuspended	0	static,ignoring_inline_asm
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:3943:13:prvResetNextTaskUnblockTime	0	static
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:3887:14:prvDeleteTCB	8	static,ignoring_inline_asm
@@ -30,7 +31,7 @@ C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:288
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:2910:21:xTaskGetApplicationTaskTag	8	static
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:2934:21:xTaskGetApplicationTaskTagFromISR	0	static,ignoring_inline_asm
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:2959:13:xTaskCallApplicationTaskHook	0	static
-C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:2989:6:vTaskSwitchContext	16	static,ignoring_inline_asm
+C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:2989:6:vTaskSwitchContext	24	static,ignoring_inline_asm
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:1704:7:vTaskSuspend	16	static,ignoring_inline_asm
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:3064:6:vTaskPlaceOnEventList	8	static,ignoring_inline_asm
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:3081:6:vTaskPlaceOnUnorderedEventList	8	static,ignoring_inline_asm
@@ -52,6 +53,8 @@ C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:398
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4014:13:xTaskPriorityInherit	24	static
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4104:13:xTaskPriorityDisinherit	16	static,ignoring_inline_asm
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4184:7:vTaskPriorityDisinheritAfterTimeout	16	static,ignoring_inline_asm
+C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4378:7:vTaskList	48	static
+C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4477:7:vTaskGetRunTimeStats	48	static
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4602:12:uxTaskResetEventItemValue	0	static
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4618:15:pvTaskIncrementMutexHeldCount	0	static
 C:/TouchGFXProjects/ARM_Hazi/Middlewares/Third_Party/FreeRTOS/Source/tasks.c:4635:11:ulTaskNotifyTake	16	static,ignoring_inline_asm

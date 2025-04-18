@@ -51,7 +51,7 @@ Application/User/main.o: C:/TouchGFXProjects/ARM_Hazi/Core/Src/main.c \
  ../../TouchGFX/App/app_touchgfx.h \
  ../../Drivers/BSP/Components/ili9341/ili9341.h \
  ../../Drivers/BSP/Components/ili9341/../Common/lcd.h \
- ../../Core/Inc/ws2812b.h ../../Core/Inc/main.h
+ ../../Core/Inc/ws2812b.h ../../Core/Inc/main.h ../../Core/Inc/cc1101.h
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../../Core/Inc/stm32f4xx_hal_conf.h:
@@ -106,3 +106,4 @@ Application/User/main.o: C:/TouchGFXProjects/ARM_Hazi/Core/Src/main.c \
 ../../Drivers/BSP/Components/ili9341/../Common/lcd.h:
 ../../Core/Inc/ws2812b.h:
 ../../Core/Inc/main.h:
+../../Core/Inc/cc1101.h:

@@ -26,11 +26,14 @@
 /* USER CODE BEGIN Includes */
 #include "Components/ili9341/ili9341.h"
 #include "ws2812b.h"
+#include "cc1101.h"
+//#include <gui/model/model_c_interface.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-volatile uint8_t overrideMode = 0;
+volatile uint8_t led_override = 0;
+int globalValue = 5;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -93,6 +96,7 @@ SPI_HandleTypeDef hspi2;
 SPI_HandleTypeDef hspi5;
 
 TIM_HandleTypeDef htim3;
+TIM_HandleTypeDef htim5;
 DMA_HandleTypeDef hdma_tim3_ch1_trig;
 
 UART_HandleTypeDef huart1;
@@ -103,8 +107,8 @@ SDRAM_HandleTypeDef hsdram1;
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .stack_size = 1024 * 4,
+  .priority = (osPriority_t) osPriorityNormal1,
 };
 /* Definitions for GUI_Task */
 osThreadId_t GUI_TaskHandle;
@@ -117,34 +121,71 @@ const osThreadAttr_t GUI_Task_attributes = {
 osThreadId_t ButtonHandle;
 const osThreadAttr_t Button_attributes = {
   .name = "Button",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .stack_size = 1024 * 4,
+  .priority = (osPriority_t) osPriorityNormal2,
+};
+/* Definitions for LedMutex */
+osMutexId_t LedMutexHandle;
+const osMutexAttr_t LedMutex_attributes = {
+  .name = "LedMutex"
+};
+/* Definitions for ButtonSemaphores */
+osSemaphoreId_t ButtonSemaphoresHandle;
+const osSemaphoreAttr_t ButtonSemaphores_attributes = {
+  .name = "ButtonSemaphores"
 };
 /* USER CODE BEGIN PV */
 extern osMutexId_t UART_MutexHandle;
 int _write(int file, char *ptr, int len)
 {
-	 HAL_UART_Transmit(&huart1, ptr, len,HAL_MAX_DELAY);
 
-	 return 0;
+        HAL_UART_Transmit(&huart1, (uint8_t*)ptr, len, 1000);
+
+    return len;
 }
 
-__IO uint8_t User_ButtonState = 0;
+/*__IO*/
+
+volatile uint8_t User_ButtonState = 0;
+
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	//OK
 	if(GPIO_Pin == GPIO_PIN_0){
+		//SetAllLEDs(0, 200, 0);
 		User_ButtonState = 0x01;
+		printf("Ok\r\n");
+
 	}
 	//Right
 	if(GPIO_Pin == GPIO_PIN_1){
+		//SetAllLEDs(0, 0, 200);
 		User_ButtonState = 0x02;
+		globalValue++;
+		printf("Right\r\n");
+
 	}
 	//Left
 	if(GPIO_Pin == GPIO_PIN_2){
+		//SetAllLEDs(0, 0, 200);
 		User_ButtonState = 0x03;
+		globalValue--;
+		printf("Left\r\n");
 	}
+	//__HAL_GPIO_EXTI_CLEAR_FLAG(GPIO_Pin);
+    // FreeRTOS szemafor kiadása
+    osSemaphoreRelease(ButtonSemaphoresHandle);
+
 }
+
+
+/*void someFunction()
+{
+    int newValue = 42;
+    model_setValue(newValue);  // Az értéket frissítjük
+    int storedValue = model_getValue();  // Az értéket lekérdezzük
+}*/
+
 
 /* USER CODE END PV */
 
@@ -161,6 +202,7 @@ static void MX_DMA2D_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_SPI2_Init(void);
+static void MX_TIM5_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 void Button_Task(void *argument);
@@ -243,20 +285,42 @@ int main(void)
   MX_TIM3_Init();
   MX_USART1_UART_Init();
   MX_SPI2_Init();
+  MX_TIM5_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
   printf(ESCAPE_GREEN "|************ STM32F429 ************|\r\n" ESCAPE_NORM);
   printf(ESCAPE_GREEN "Last update: "__DATE__ "  " __TIME__ "\r\n" ESCAPE_NORM);
+
+/*
+  Init();              // must be set to initialize the cc1101!
+   setCCMode(1);       // set config for internal transmission mode.
+   setModulation(0);  // set modulation mode. 0 = 2-FSK, 1 = GFSK, 2 = ASK/OOK, 3 = 4-FSK, 4 = MSK.
+   setMHZ(812.50);   // Here you can set your basic frequency. The lib calculates the frequency automatically (default = 433.92).The cc1101 can: 300-348 MHZ, 387-464MHZ and 779-928MHZ. Read More info from datasheet.
+   setSyncMode(2);  // Combined sync-word qualifier mode. 0 = No preamble/sync. 1 = 16 sync word bits detected. 2 = 16/16 sync word bits detected. 3 = 30/32 sync word bits detected. 4 = No preamble/sync, carrier-sense above threshold. 5 = 15/16 + carrier-sense above threshold. 6 = 16/16 + carrier-sense above threshold. 7 = 30/32 + carrier-sense above threshold.
+   setCrc(1);      // 1 = CRC calculation in TX and CRC check in RX enabled. 0 = CRC disabled for TX and RX.
+   printf("Rx Mode\r\n");
+   if (getCC1101()){         // Check the CC1101 Spi connection.
+   printf("Connection OK\r\n");
+   }else{
+   printf("Connection Error\r\n");
+   }*/
   /* USER CODE END 2 */
 
   /* Init scheduler */
   osKernelInitialize();
+  /* Create the mutex(es) */
+  /* creation of LedMutex */
+  LedMutexHandle = osMutexNew(&LedMutex_attributes);
 
   /* USER CODE BEGIN RTOS_MUTEX */
-  /* add mutexes, ... */
+  /* add mutexes, ...  */
   /* USER CODE END RTOS_MUTEX */
+
+  /* Create the semaphores(s) */
+  /* creation of ButtonSemaphores */
+  ButtonSemaphoresHandle = osSemaphoreNew(1, 1, &ButtonSemaphores_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -524,7 +588,6 @@ static void MX_LTDC_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN LTDC_Init 2 */
-    /*Select the device */
   LcdDrv = &ili9341_drv;
   /* LCD Init */
   LcdDrv->Init();
@@ -605,8 +668,6 @@ static void MX_SPI5_Init(void)
   }
   /* USER CODE BEGIN SPI5_Init 2 */
 
-
-
   /* USER CODE END SPI5_Init 2 */
 
 }
@@ -667,6 +728,51 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 2 */
   HAL_TIM_MspPostInit(&htim3);
+
+}
+
+/**
+  * @brief TIM5 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM5_Init(void)
+{
+
+  /* USER CODE BEGIN TIM5_Init 0 */
+
+  /* USER CODE END TIM5_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM5_Init 1 */
+
+  /* USER CODE END TIM5_Init 1 */
+  htim5.Instance = TIM5;
+  htim5.Init.Prescaler = 160;
+  htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim5.Init.Period = 4294967295;
+  htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+  if (HAL_TIM_Base_Init(&htim5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM5_Init 2 */
+
+  /* USER CODE END TIM5_Init 2 */
 
 }
 
@@ -762,7 +868,6 @@ static void MX_FMC_Init(void)
   }
 
   /* USER CODE BEGIN FMC_Init 2 */
-
   FMC_SDRAM_CommandTypeDef command;
 
   /* Program the SDRAM external device */
@@ -800,6 +905,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(CS_GPIO_Port, CS_Pin, GPIO_PIN_RESET);
+
   /*Configure GPIO pins : VSYNC_FREQ_Pin RENDER_TIME_Pin FRAME_RATE_Pin MCU_ACTIVE_Pin */
   GPIO_InitStruct.Pin = VSYNC_FREQ_Pin|RENDER_TIME_Pin|FRAME_RATE_Pin|MCU_ACTIVE_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -817,7 +925,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pins : PA0 PA1 PA2 */
   GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PD12 PD13 */
@@ -826,6 +934,19 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : GDO0_Pin */
+  GPIO_InitStruct.Pin = GDO0_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GDO0_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : CS_Pin */
+  GPIO_InitStruct.Pin = CS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(CS_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI0_IRQn, 5, 0);
@@ -1181,11 +1302,10 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if(overrideMode == 0){
+	  if(User_ButtonState == 0x0 && led_override == 0){
 		  UpdateColorWheel();
-		  osDelay(100);
 	  }
-
+	  osDelay(100);
   }
   /* USER CODE END 5 */
 }
@@ -1196,48 +1316,57 @@ void StartDefaultTask(void *argument)
 * @param argument: Not used
 * @retval None
 */
-
 /* USER CODE END Header_Button_Task */
 void Button_Task(void *argument)
 {
   /* USER CODE BEGIN Button_Task */
+	char pcWriteBuffer[256];
+    /* Block for 500ms. */
+    const TickType_t xDelay = 1000 / portTICK_PERIOD_MS;
   /* Infinite loop */
   for(;;)
   {
-	  if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET){
-		  overrideMode = 1;
-		  printf( ESCAPE_NORM "OK_Button: pressed down\r\n");
-		  SetAllLEDs(0, 200, 0);
-          while (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET)
-          {
-              osDelay(10); // Vár, amíg fel nem engeded a gombot
-          }
-	  }
-	  else if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1) == GPIO_PIN_SET){
-		  overrideMode = 1;
-		  printf( ESCAPE_NORM "Left_Button: pressed down\r\n");
-		  SetAllLEDs(0, 0, 200);
-          while (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1) == GPIO_PIN_SET)
-          {
-              osDelay(10); // Vár, amíg fel nem engeded a gombot
-          }
+	  if (osSemaphoreAcquire(ButtonSemaphoresHandle, osWaitForever) == osOK){
+		if(User_ButtonState == 0x01){
+			osMutexAcquire	(LedMutexHandle, osWaitForever);
+			led_override = 1;  // <<< felülírás aktív
+			printf( ESCAPE_NORM "OK_Button: pressed down\r\n");
+			SetAllLEDs(0, 200, 0);
+			vTaskDelay(pdMS_TO_TICKS(500));
+			User_ButtonState = 0x0;
+		    led_override = 0; // <<< visszaengedjük a futófényhez
+			vTaskGetRunTimeStats(pcWriteBuffer);
+			printf("\r\n %s \r\n",pcWriteBuffer);
+			osMutexRelease	(LedMutexHandle);
 
-	  }
-	  else if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_2) == GPIO_PIN_SET){
-		  overrideMode = 1;
-		  printf( ESCAPE_NORM "Right_Button: pressed down\r\n");
-		  SetAllLEDs(0, 0, 200);
-          while (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_2) == GPIO_PIN_SET)
-          {
-              osDelay(10); // Vár, amíg fel nem engeded a gombot
-          }
-	  }
-	  else{
-		  overrideMode = 0;
-	  }
+		}
+		if(User_ButtonState == 0x02){
+			osMutexAcquire	(LedMutexHandle, osWaitForever);
+			led_override = 1;  // <<< felülírás aktív
+			printf( ESCAPE_NORM "Right_Button: pressed down\r\n");
+			SetAllLEDs(0, 0, 200);
+			vTaskDelay(pdMS_TO_TICKS(250));
+			User_ButtonState = 0x0;
+			led_override = 0;  // <<< felülírás aktív
+			osMutexRelease	(LedMutexHandle);
 
-	osDelay(200);
+		}
+		if(User_ButtonState == 0x03){
+			osMutexAcquire	(LedMutexHandle, osWaitForever);
+			led_override = 1;  // <<< felülírás aktív
+			printf( ESCAPE_NORM "Left_Button: pressed down\r\n");
+			SetAllLEDs(0, 0, 200);
+			vTaskDelay(pdMS_TO_TICKS(250));
+			User_ButtonState = 0x0;
+			led_override = 0;  // <<< felülírás aktív
+			osMutexRelease	(LedMutexHandle);
+
+		}
+		//osDelay(100);
+	 }
+	  osDelay(100);
   }
+
   /* USER CODE END Button_Task */
 }
 

@@ -17,21 +17,21 @@ Home_ScreenViewBase::Home_ScreenViewBase() :
     image1.setBitmap(touchgfx::Bitmap(BITMAP_HATER_ID));
     add(image1);
 
-    Select_device.setXY(105, 110);
-    Select_device.setBitmaps(touchgfx::Bitmap(BITMAP_DEVICE_ID), touchgfx::Bitmap(BITMAP_DEVICE_ID));
-    add(Select_device);
+    SELECT_DEVICE.setXY(105, 110);
+    SELECT_DEVICE.setBitmaps(touchgfx::Bitmap(BITMAP_DEVICE_ID), touchgfx::Bitmap(BITMAP_DEVICE_ID));
+    add(SELECT_DEVICE);
 
-    Wifi.setXY(228, 16);
-    Wifi.setBitmaps(touchgfx::Bitmap(BITMAP_WIFI_ID), touchgfx::Bitmap(BITMAP_WIFI_ID));
-    add(Wifi);
+    WIFI.setXY(228, 16);
+    WIFI.setBitmaps(touchgfx::Bitmap(BITMAP_WIFI_ID), touchgfx::Bitmap(BITMAP_WIFI_ID));
+    add(WIFI);
 
     BLE.setXY(228, 61);
     BLE.setBitmaps(touchgfx::Bitmap(BITMAP_BLUTOOTH_ID), touchgfx::Bitmap(BITMAP_BLUTOOTH_ID));
     add(BLE);
 
-    button10.setXY(228, 110);
-    button10.setBitmaps(touchgfx::Bitmap(BITMAP_ROOM_SELECT_ID), touchgfx::Bitmap(BITMAP_ROOM_SELECT_ID));
-    add(button10);
+    ROOM_SELECT.setXY(228, 110);
+    ROOM_SELECT.setBitmaps(touchgfx::Bitmap(BITMAP_ROOM_SELECT_ID), touchgfx::Bitmap(BITMAP_ROOM_SELECT_ID));
+    add(ROOM_SELECT);
 
     Temperature.setXY(11, 16);
     Temperature.setBitmap(touchgfx::Bitmap(BITMAP_HOMERSEKLET_ID));
@@ -45,15 +45,15 @@ Home_ScreenViewBase::Home_ScreenViewBase() :
     image3.setBitmap(touchgfx::Bitmap(BITMAP_PARATARTALOM_ID));
     add(image3);
 
-    Settings.setXY(228, 185);
-    Settings.setBitmaps(touchgfx::Bitmap(BITMAP_SETTINGS_ID), touchgfx::Bitmap(BITMAP_SETTINGS_ID));
-    Settings.setAction(buttonCallback);
-    add(Settings);
+    SETTINGS.setXY(228, 185);
+    SETTINGS.setBitmaps(touchgfx::Bitmap(BITMAP_SETTINGS_ID), touchgfx::Bitmap(BITMAP_SETTINGS_ID));
+    SETTINGS.setAction(buttonCallback);
+    add(SETTINGS);
 
-    About.setXY(274, 185);
-    About.setBitmaps(touchgfx::Bitmap(BITMAP_ABOUT_ID), touchgfx::Bitmap(BITMAP_ABOUT_ID));
-    About.setAction(buttonCallback);
-    add(About);
+    ABOUT.setXY(274, 185);
+    ABOUT.setBitmaps(touchgfx::Bitmap(BITMAP_ABOUT_ID), touchgfx::Bitmap(BITMAP_ABOUT_ID));
+    ABOUT.setAction(buttonCallback);
+    add(ABOUT);
 
     digitalClock1.setPosition(105, 34, 110, 45);
     digitalClock1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -62,6 +62,38 @@ Home_ScreenViewBase::Home_ScreenViewBase() :
     digitalClock1.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR_NO_SECONDS);
     digitalClock1.setTime24Hour(10, 10, 0);
     add(digitalClock1);
+
+    data_temp.setXY(14, 44);
+    data_temp.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    data_temp.setLinespacing(0);
+    data_temp.setWideTextAction(WIDE_TEXT_WORDWRAP_ELLIPSIS_AFTER_SPACE);
+    Unicode::snprintf(data_tempBuffer, DATA_TEMP_SIZE, "%s", touchgfx::TypedText(T_TEMPDATA).getText());
+    data_temp.setWildcard(data_tempBuffer);
+    data_temp.resizeToCurrentText();
+    data_temp.setTypedText(touchgfx::TypedText(T___SINGLEUSE_J8SO));
+    add(data_temp);
+
+    textArea2.setXY(12, 25);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea2.setLinespacing(0);
+    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_L27J));
+    add(textArea2);
+
+    textArea3.setXY(22, 110);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9QXP));
+    add(textArea3);
+
+    textArea4.setXY(31, 126);
+    textArea4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea4.setLinespacing(0);
+    textArea4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QLGR));
+    add(textArea4);
+
+    image4.setXY(12, 160);
+    image4.setBitmap(touchgfx::Bitmap(BITMAP_ACTIVAIHOME_LOGO_SCREEN_ID));
+    add(image4);
 }
 
 Home_ScreenViewBase::~Home_ScreenViewBase()
@@ -76,17 +108,17 @@ void Home_ScreenViewBase::setupScreen()
 
 void Home_ScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &Settings)
+    if (&src == &SETTINGS)
     {
         //settings_clic
-        //When Settings clicked change screen to Settings_Screen
+        //When SETTINGS clicked change screen to Settings_Screen
         //Go to Settings_Screen with screen transition towards South
         application().gotoSettings_ScreenScreenSlideTransitionSouth();
     }
-    if (&src == &About)
+    if (&src == &ABOUT)
     {
         //about
-        //When About clicked change screen to About_Screen
+        //When ABOUT clicked change screen to About_Screen
         //Go to About_Screen with no screen transition
         application().gotoAbout_ScreenScreenNoTransition();
     }

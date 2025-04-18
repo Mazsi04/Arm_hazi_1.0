@@ -68,6 +68,10 @@ void Error_Handler(void);
 #define FRAME_RATE_GPIO_Port GPIOE
 #define MCU_ACTIVE_Pin GPIO_PIN_5
 #define MCU_ACTIVE_GPIO_Port GPIOE
+#define GDO0_Pin GPIO_PIN_9
+#define GDO0_GPIO_Port GPIOG
+#define CS_Pin GPIO_PIN_7
+#define CS_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
