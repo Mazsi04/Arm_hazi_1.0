@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_2RHJ" Alignment="Left" TypographyId="Typography_02">
+        <Translation Language="GB">Selected Room:</Translation>
+      </Text>
+      <Text Id="__SingleUse_1SM9" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Selected Device:</Translation>
+      </Text>
+      <Text Id="__SingleUse_91IU" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">Bluetooth</Translation>
+      </Text>
+      <Text Id="__SingleUse_0RPE" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">WiFi</Translation>
+      </Text>
+      <Text Id="HumidityData" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">0123456789</Translation>
+      </Text>
+      <Text Id="__SingleUse_CLGD" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_HQI0" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">%</Translation>
+      </Text>
+      <Text Id="__SingleUse_27T7" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">°C</Translation>
+      </Text>
+      <Text Id="TempData" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">12</Translation>
+      </Text>
+      <Text Id="__SingleUse_9QXP" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Humidity</Translation>
+      </Text>
+      <Text Id="__SingleUse_L27J" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Temperature</Translation>
+      </Text>
+      <Text Id="__SingleUse_J8SO" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_7JQQ" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_MBBH" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">https://activeaihome.com/</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="javatext.ttf" Size="13" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="javatext.ttf" Size="34" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
+    <Typography Id="Small" Font="javatext.ttf" Size="17" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_00" Font="javatext.ttf" Size="12" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_01" Font="arial.ttf" Size="13" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_02" Font="javatext.ttf" Size="11" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>

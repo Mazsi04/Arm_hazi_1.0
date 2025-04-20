@@ -1,0 +1,516 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Home_Screen",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 320,
+            "Height": 240,
+            "RelativeFilename": "Hater.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "SELECT_DEVICE",
+            "X": 105,
+            "Y": 110,
+            "Width": 110,
+            "Height": 110,
+            "Pressed": "Device.png",
+            "Released": "Device.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "WIFI",
+            "X": 228,
+            "Y": 16,
+            "Width": 80,
+            "Height": 35,
+            "Pressed": "Blutooth.png",
+            "Released": "Blutooth.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "BLE",
+            "X": 228,
+            "Y": 61,
+            "Width": 80,
+            "Height": 35,
+            "Pressed": "Blutooth.png",
+            "Released": "Blutooth.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "ROOM_SELECT",
+            "X": 228,
+            "Y": 110,
+            "Width": 80,
+            "Height": 65,
+            "Pressed": "Room_select.png",
+            "Released": "Room_select.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Temperature",
+            "X": 11,
+            "Y": 16,
+            "Width": 80,
+            "Height": 80,
+            "RelativeFilename": "Homerseklet.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 105,
+            "Y": 16,
+            "Width": 110,
+            "Height": 80,
+            "RelativeFilename": "Ido.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image3",
+            "X": 11,
+            "Y": 110,
+            "Width": 80,
+            "Height": 40,
+            "RelativeFilename": "Paratartalom.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "SETTINGS",
+            "X": 228,
+            "Y": 185,
+            "Width": 34,
+            "Height": 35,
+            "Pressed": "Settings.png",
+            "Released": "Settings.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "ABOUT",
+            "X": 274,
+            "Y": 185,
+            "Width": 34,
+            "Height": 35,
+            "Pressed": "About.png",
+            "Released": "About.png"
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock1",
+            "X": 105,
+            "Y": 30,
+            "Width": 110,
+            "Height": 52,
+            "TextId": "__SingleUse_7JQQ",
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 10,
+            "InitialMinute": 10
+          },
+          {
+            "Type": "TextArea",
+            "Name": "data_temp",
+            "X": 12,
+            "Y": 42,
+            "Width": 40,
+            "Height": 40,
+            "TextId": "__SingleUse_J8SO",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "TempData",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "WideTextAction": 3
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 12,
+            "Y": 25,
+            "Width": 73,
+            "Height": 17,
+            "TextId": "__SingleUse_L27J",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 22,
+            "Y": 110,
+            "Width": 54,
+            "Height": 17,
+            "TextId": "__SingleUse_9QXP",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "image4",
+            "X": 12,
+            "Y": 160,
+            "Width": 80,
+            "Height": 60,
+            "RelativeFilename": "Activaihome_logo_screen.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5",
+            "X": 52,
+            "Y": 42,
+            "Width": 36,
+            "Height": 40,
+            "TextId": "__SingleUse_27T7",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea6",
+            "X": 58,
+            "Y": 126,
+            "Width": 15,
+            "Height": 20,
+            "TextId": "__SingleUse_HQI0",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "humidty_data",
+            "X": 22,
+            "Y": 126,
+            "Width": 34,
+            "Height": 20,
+            "TextId": "__SingleUse_CLGD",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "HumidityData"
+            },
+            "WideTextAction": 3
+          },
+          {
+            "Type": "Image",
+            "Name": "image5",
+            "X": 230,
+            "Y": 21,
+            "Width": 25,
+            "Height": 25,
+            "RelativeFilename": "Wifi.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image6",
+            "X": 230,
+            "Y": 65,
+            "Width": 25,
+            "Height": 25,
+            "RelativeFilename": "BLE.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea7",
+            "X": 264,
+            "Y": 20,
+            "Width": 25,
+            "Height": 12,
+            "TextId": "__SingleUse_0RPE",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea8",
+            "X": 255,
+            "Y": 64,
+            "Width": 51,
+            "Height": 12,
+            "TextId": "__SingleUse_91IU",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea9",
+            "X": 111,
+            "Y": 114,
+            "Width": 92,
+            "Height": 17,
+            "TextId": "__SingleUse_1SM9",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea10",
+            "X": 232,
+            "Y": 113,
+            "Width": 73,
+            "Height": 11,
+            "TextId": "__SingleUse_2RHJ",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "settings_clic",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "SETTINGS"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "South",
+              "ActionComponent": "Settings_Screen"
+            }
+          },
+          {
+            "InteractionName": "Button_OK",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 48
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "WidgetScrolling"
+            }
+          },
+          {
+            "InteractionName": "about",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ABOUT"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "About_Screen"
+            }
+          },
+          {
+            "InteractionName": "Button_Right",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 49
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "WidgetScrolling"
+            }
+          },
+          {
+            "InteractionName": "Button_Left",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 50
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "WidgetScrolling"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "About_Screen",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 320,
+            "Height": 240,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_320x240_poly.png"
+          },
+          {
+            "Type": "QRCode",
+            "Name": "qrCode1",
+            "X": 108,
+            "Y": 46,
+            "Width": 105,
+            "Height": 105,
+            "QRVersion": 1,
+            "Scale": 5,
+            "Text": "activeaihome.com",
+            "BackgroundColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "back_button",
+            "Y": 190,
+            "Width": 50,
+            "Height": 50,
+            "Pressed": "__generated\\icon_theme_images_navigation_arrow_back_50_50_000000.svg.png",
+            "Released": "__generated\\icon_theme_images_navigation_arrow_back_50_50_000000.svg.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 77,
+            "Y": 161,
+            "Width": 147,
+            "Height": 17,
+            "TextId": "__SingleUse_MBBH",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "back_button"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Home_Screen"
+            }
+          },
+          {
+            "InteractionName": "back_hardver",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 50
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Home_Screen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Settings_Screen",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 320,
+            "Height": 240,
+            "RelativeFilename": "Hater.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "back_button",
+            "Y": 190,
+            "Width": 50,
+            "Height": 50,
+            "Pressed": "__generated\\icon_theme_images_navigation_arrow_back_50_50_000000.svg.png",
+            "Released": "__generated\\icon_theme_images_navigation_arrow_back_50_50_000000.svg.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "button1",
+            "X": 90,
+            "Y": 45,
+            "Width": 140,
+            "Height": 40,
+            "Pressed": "Wifi_settings_off.png",
+            "Released": "Wifi_settings_on.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Back_button",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "back_button"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Home_Screen"
+            }
+          },
+          {
+            "InteractionName": "back_hardver_button",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 50
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Home_Screen"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "ARM_Hazi",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Home_Screen",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m4",
+    "ProjectFile": "../STM32F429I_DISCO_REV_E01.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.24.2"
+}
